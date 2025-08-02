@@ -2,30 +2,253 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>À propos - Alex Dev</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* Animation container principal */
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-container {
+      background: white;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 3rem 2.5rem;
+      animation: fadeSlideIn 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* Animation staggerée pour les sections */
+    @keyframes slideInFromLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .section-block {
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideInFromLeft 0.6s forwards;
+    }
+
+    .section-block:nth-of-type(1) {
+      animation-delay: 0.3s;
+    }
+    .section-block:nth-of-type(2) {
+      animation-delay: 0.6s;
+    }
+    .section-block:nth-of-type(3) {
+      animation-delay: 0.9s;
+    }
+
+    h1 {
+      font-weight: 900;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    .section-block {
+      margin-bottom: 2rem;
+      border-left: 5px solid #27ae60;
+      padding-left: 1rem;
+    }
+
+    .section-block h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #27ae60;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+
+    .section-block h2 i {
+      font-size: 1.8rem;
+      color: #2ecc71;
+    }
+
+    .section-block h2:hover {
+      color: #1e7e34;
+      transform: scale(1.05);
+    }
+
+    .section-block p, 
+    .section-block ol, 
+    .section-block ul {
+      color: #34495e;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .fun-facts li::marker {
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    /* Bouton flottant retour */
+    .btn-back {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #27ae60;
+      color: white;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 1rem;
+    }
+    .btn-back:hover {
+      animation: pulse 1s infinite;
+      background-color: #219150;
+      box-shadow: 0 8px 20px rgba(33, 145, 80, 0.6);
+      text-decoration: none;
+    }
+    .btn-back i {
+      font-size: 1.2rem;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(33, 145, 80, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(33, 145, 80, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(33, 145, 80, 0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .about-container {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .section-block h2 {
+        font-size: 1.3rem;
+      }
+      .btn-back {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.7rem 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <h1>À propos - Alex Dev</h1>
+  <div class="about-container" role="main" aria-label="Section à propos d'Alex Dev">
+    <h1>À propos - Alex Dev</h1>
 
-  <h2>Biographie</h2>
-  <p>Je suis Alex, développeur passionné qui aime créer des sites web simples et efficaces.</p>
+    <section class="section-block" aria-label="Biographie">
+      <h2><i class="bi bi-person-circle"></i> Biographie</h2>
+      <p>Je suis Alex, développeur passionné qui aime créer des sites web simples et efficaces.</p>
+    </section>
 
-  <h2>Mes compétences</h2>
-  <ol>
-    <li>HTML / CSS</li>
-    <li>JavaScript</li>
-    <li>Git</li>
-  </ol>
+    <section class="section-block" aria-label="Compétences">
+      <h2><i class="bi bi-code-slash"></i> Mes compétences</h2>
+      <ol>
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+      </ol>
+    </section>
 
-  <h2>3 faits amusants sur moi</h2>
-  <ul>
-    <li>J'adore le café.</li>
-    <li>Je joue de la guitare.</li>
-    <li>Je voyage dès que possible.</li>
-  </ul>
+    <section class="section-block" aria-label="Faits amusants">
+      <h2><i class="bi bi-emoji-smile"></i> 3 faits amusants sur moi</h2>
+      <ul class="fun-facts">
+        <li>J'adore le café</li>
+        <li>Je joue de la guitare</li>
+        <li>Je voyage dès que possible</li>
+      </ul>
+    </section>
+  </div>
 
-  <p><a href="index.html">← Retour au menu</a></p>
+  <a href="index.html" class="btn-back" aria-label="Retour au menu principal">
+    <i class="bi bi-arrow-left-circle"></i> Retour
+  </a>
+<footer class="footer bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+        <p class="mb-0">&copy; 2025 Alex Dev. Tous droits réservés.</p>
+      </div>
+      
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <a href="index.html" class="text-white me-3 text-decoration-none">Accueil</a>
+        <a href="about.html" class="text-white me-3 text-decoration-none">À propos</a>
+        <a href="projects.html" class="text-white me-3 text-decoration-none">Projets</a>
+        <a href="contact.html" class="text-white text-decoration-none">Contact</a>
+      </div>
+      
+      <div class="col-md-4 text-center text-md-end">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white me-3 fs-5">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white me-3 fs-5">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-white me-3 fs-5">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="text-white fs-5">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

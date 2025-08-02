@@ -1,35 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Alex Dev</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #fceabb 0%, #f8b500 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    main.contact-container {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      animation: fadeSlideUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-weight: 900;
+      color: #d35400;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 8px #f8b500;
+      border-color: #f8b500;
+      outline: none;
+    }
+
+    button.btn-submit {
+      background-color: #f8b500;
+      color: white;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 0.7rem 1.8rem;
+      width: 100%;
+      border: none;
+      box-shadow: 0 5px 15px rgba(248, 181, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button.btn-submit:hover {
+      background-color: #d35400;
+      box-shadow: 0 8px 25px rgba(211, 84, 0, 0.7);
+    }
+
+    iframe {
+      border-radius: 15px;
+      width: 100%;
+      height: 250px;
+      margin-top: 2rem;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 1.8rem;
+      color: #f8b500;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .btn-back:hover {
+      color: #d35400;
+      text-decoration: underline;
+    }
+
+    /* Contacts info style */
+    .contacts-list {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .contacts-list li {
+      margin-bottom: 0.6rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .contacts-list li i {
+      color: #f8b500;
+      margin-right: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+  </style>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 </head>
 <body>
 
-    <h1>Contactez-nous</h1>
+  <main class="contact-container" role="main" aria-label="Formulaire de contact">
+    <h1>Contactez-moi</h1>
 
     <form>
-        <label>Nom :</label><br>
-        <input type="text" name="nom" required><br><br>
+      <div class="mb-3">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" class="form-control" required />
+      </div>
 
-        <label>Email :</label><br>
-        <input type="email" name="email" required><br><br>
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required />
+      </div>
 
-        <label>Sujet :</label><br>
-        <input type="text" name="sujet" required><br><br>
+      <div class="mb-3">
+        <label for="sujet">Sujet</label>
+        <input type="text" id="sujet" name="sujet" class="form-control" required />
+      </div>
 
-        <label>Message :</label><br>
-        <textarea name="message" rows="5" required></textarea><br><br>
+      <div class="mb-3">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+      </div>
 
-        <button type="submit">Envoyer</button>
+      <button type="submit" class="btn-submit" aria-label="Envoyer le message">Envoyer</button>
     </form>
 
-    <h2>Notre position</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15430.181172138742!2d-17.4464576!3d14.6934258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5f3dfbdbb%3A0xd7f79891806e03c6!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2s!4v1656110480447"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Carte localisation Dakar Sénégal"></iframe>
 
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15430.181172138742!2d-17.4464576!3d14.6934258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5f3dfbdbb%3A0xd7f79891806e03c6!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2s!4v1656110480447"
-        width="70%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+    <ul class="contacts-list">
+      <li><i class="bi bi-geo-alt-fill"></i> Dakar, Sénégal</li>
+      <li><i class="bi bi-envelope-fill"></i> contact@monsite.com</li>
+      <li><i class="bi bi-telephone-fill"></i> +221 77 123 45 67</li>
+    </ul>
 
+    <a href="index.html" class="btn-back" aria-label="Retour à la page d'accueil">← Retour</a>
+  </main>
+<footer style="background: linear-gradient(90deg, #f8b500, #fceabb); color: #4a4a4a; padding: 1.5rem 0; margin-top: 3rem; text-align: center; font-family: 'Roboto', sans-serif;">
+  <div class="container">
+    <p>© 2025 Alex Dev - Tous droits réservés</p>
+    <div class="social-icons" style="margin-top: 0.5rem;">
+      <a href="#" aria-label="Facebook" style="color: #4a4a4a; margin: 0 10px; font-size: 1.5rem; text-decoration:none;">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="#" aria-label="Twitter" style="color: #4a4a4a; margin: 0 10px; font-size: 1.5rem; text-decoration:none;">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="#" aria-label="Instagram" style="color: #4a4a4a; margin: 0 10px; font-size: 1.5rem; text-decoration:none;">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="#" aria-label="LinkedIn" style="color: #4a4a4a; margin: 0 10px; font-size: 1.5rem; text-decoration:none;">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="#" aria-label="YouTube" style="color: #4a4a4a; margin: 0 10px; font-size: 1.5rem; text-decoration:none;">
+        <i class="bi bi-youtube"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

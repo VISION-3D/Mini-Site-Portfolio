@@ -1,111 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bienvenue - Alex Dev</title>
- 
-<head>
-  <link rel="stylesheet" href="css/style.css">
-  <meta charset="UTF-8">
-  <title>Bienvenue - Alex Dev</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Le chemin vers le CSS -->
-</head>
 
-
-</head>
-<body>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   
-  <header>
-   
-    
-   <img src="image/logoAlex.png" alt="Logo Alex Dev" width="200" class="logo-encercle">
-
- <nav>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="about.html">À propos</a></li>
-    <li><a href="projects.html">Projets</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <nav class="navbar navbar-expand-lg" style="background: linear-gradient(90deg, #f8b500, #fceabb);">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="index.html">Alex Dev</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white active" aria-current="page" href="index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="about.html">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="projects.html">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #fceabb 0%, #f8b500 100%);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
 
-  </header>
+    main.presentation {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      text-align: center;
+      animation: fadeSlideUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-  <main>
-    <section class="presentation">
-      <h1>Bienvenue sur mon portfolio</h1>
-      <p>Développeur web passionné, je conçois des sites performants et modernes.</p>
-      <img src="image2/Alex.jpg" alt="Photo d'Alex Dev" width="200" class="image-encadree">
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      
-    
-      <p><a href="Alex_Dev_CV.pdf" download>Télécharger mon CV</a></p>
-      
-      <p><a href="projects.html">Voir mes projets récents</a></p>
-    </section>
+    h1 {
+      font-weight: 900;
+      color: #d35400;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 1.8rem;
+    }
+
+    .image-encadree {
+      border-radius: 50%;
+      border: 5px solid #f8b500;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Animation image au hover */
+    .image-encadree:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(248, 181, 0, 0.6);
+    }
+
+    a {
+      display: inline-block;
+      margin: 0.6rem 1rem;
+      padding: 0.7rem 1.8rem;
+      background-color: #f8b500;
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(248, 181, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #d35400;
+      box-shadow: 0 8px 25px rgba(211, 84, 0, 0.7);
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="presentation" role="main" aria-label="Présentation">
+    <h1>Bienvenue sur mon portfolio</h1>
+    <p>Développeur web passionné, je conçois des sites performants et modernes.</p>
+    <img src="image2/Alex.jpg" alt="Photo d'Alex Dev" class="image-encadree" />
+
+    <a href="Alex_Dev_CV.pdf" download aria-label="Télécharger mon CV">Télécharger mon CV</a>
+    <a href="projects.html" aria-label="Voir mes projets récents">Voir mes projets récents</a>
   </main>
 
-  
-    </p>
-  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
